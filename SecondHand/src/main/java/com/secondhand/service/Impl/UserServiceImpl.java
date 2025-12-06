@@ -1,7 +1,7 @@
 package com.secondhand.service.Impl;
 
 import com.secondhand.dao.UserDao;
-import com.secondhand.dao.impl.UserDaoImpl;
+import com.secondhand.dao.Impl.UserDaoImpl;
 import com.secondhand.entity.User;
 import com.secondhand.service.UserService;
 import java.security.MessageDigest;

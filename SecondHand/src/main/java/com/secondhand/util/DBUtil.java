@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBUtil {
-    private static final String URL = "jdbc:mysql://服务器IP:3306/SecondHand?useSSL=false&serverTimezone=UTC&characterEncoding=utf8";
+    private static final String URL = "jdbc:mysql://10.100.164.17:3306/SecondHand?useSSL=false&serverTimezone=UTC&characterEncoding=utf8";
     private static final String USER = "second";
     private static final String PASSWORD = "@sh67813964";
 

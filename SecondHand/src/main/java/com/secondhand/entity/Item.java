@@ -12,11 +12,10 @@ public class Item  implements Serializable {
     private String status;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
-    private Integer deleted;
 
     public Item() {}
 
-    public Item(Long id, String title, String description, Double price, Long userId, String status, LocalDateTime createTime, LocalDateTime updateTime, Integer deleted) {
+    public Item(Long id, String title, String description, Double price, Long userId, String status, LocalDateTime createTime, LocalDateTime updateTime) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -25,7 +24,6 @@ public class Item  implements Serializable {
         this.status = status;
         this.createTime = createTime;
         this.updateTime = updateTime;
-        this.deleted = deleted;
     }
 
     public Long getId() {
@@ -90,13 +88,5 @@ public class Item  implements Serializable {
 
     public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public Integer getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Integer deleted) {
-        this.deleted = deleted;
     }
 }

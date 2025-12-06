@@ -13,4 +13,5 @@ public interface ItemService {
     List<Item> getAllItems(); // 查询所有
     List<Item> getUserItems(Long userId); // 查询用户物品
     List<Item> searchItems(String keyword); // 模糊搜索
+    boolean purchase(Long itemId, Long buyerId); // 购买物品
 }

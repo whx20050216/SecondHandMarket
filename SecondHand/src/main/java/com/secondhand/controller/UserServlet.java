@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.secondhand.entity.User;
 import com.secondhand.service.UserService;
 import com.secondhand.service.Impl.UserServiceImpl;
-
+import com.secondhand.util.JsonUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class UserServlet extends HttpServlet {
 
     private UserService userService = new UserServiceImpl();
-    private Gson gson = new Gson(); // 创建Gson实例
+    private Gson gson = JsonUtil.getGson(); // 创建Gson实例
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
