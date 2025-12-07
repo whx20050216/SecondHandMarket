@@ -24,7 +24,7 @@ public class ItemServiceImpl implements ItemService {
             return false; // 无权修改
         }
 
-        // 2. 已售出的物品不允许任何修改（只能删除）
+        // 2. 已售出的物品不允许任何修改
         if ("sold".equals(oldItem.getStatus())) {
             return false; // 已售出物品不可编辑
         }
@@ -40,7 +40,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public boolean delete(Long itemId, Long currentUserId) {
-        // ================= 核心要求：只能删除自己的物品 =================
+        // 只能删除自己的物品
         Item item = itemDao.findById(itemId);
         if (item == null || !item.getUserId().equals(currentUserId)) {
             return false; // 无权删除
@@ -63,7 +63,7 @@ public class ItemServiceImpl implements ItemService {
         return itemDao.findByUserId(userId);
     }
 
-    // ================= 作业要求：模糊查询 =================
+    // 模糊查询
     @Override
     public List<Item> searchItems(String keyword) {
         // 1. 处理参数：前后加 % 实现模糊匹配
@@ -73,7 +73,7 @@ public class ItemServiceImpl implements ItemService {
         return itemDao.findByFuzzyKeyword(fuzzyKeyword);
     }
 
-    // ================= 标记售出 =================
+    // 标记售出
     @Override
     public boolean markAsSold(Long itemId, Long userId) {
         Item item = itemDao.findById(itemId);

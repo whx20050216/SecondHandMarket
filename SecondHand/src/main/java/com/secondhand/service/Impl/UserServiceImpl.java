@@ -11,7 +11,7 @@ public class UserServiceImpl implements UserService {
 
     private UserDao userDao = new UserDaoImpl();
 
-    // ================= 密码加密工具（MD5，作业够用） =================
+    // 密码加密工具（MD5）
     private String encryptPassword(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -28,12 +28,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean register(User user) {
-        // 1. 检查用户名是否已存在（业务校验）
+        // 1. 检查用户名是否已存在
         if (userDao.findByUsername(user.getUsername()) != null) {
             return false;
         }
 
-        // 2. 密码加密存储（核心要求：不能存明文）
+        // 2. 密码加密存储
         user.setPassword(encryptPassword(user.getPassword()));
 
         // 3. 调用Dao插入数据库
