@@ -7,7 +7,7 @@
 - **Controller层**: Servlet接收请求，调用Service
 - **Service层**: 业务逻辑处理（权限校验、数据加密等）
 - **DAO层**: 数据库访问（DBUtil封装JDBC操作）
-- **View层**: JSP页面展示（CSS/JS已完全分离，无CDN依赖）
+- **View层**: JSP页面展示
 
 ## 二、数据库结构说明
 
