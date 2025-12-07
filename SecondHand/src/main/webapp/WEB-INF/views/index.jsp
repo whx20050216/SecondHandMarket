@@ -61,11 +61,19 @@
         isPageVisible = !document.hidden;
     });
 
-    // AJAX 刷新函数
+    // AJAX 刷新函数（修复版）
     function refreshItems() {
         if (!isPageVisible) return; // 页面不可见时不刷新
 
-        fetch('${pageContext.request.contextPath}/item/list?ajax=true')
+        // 获取当前URL中的搜索关键词
+        const urlParams = new URLSearchParams(window.location.search);
+        const keyword = urlParams.get('keyword') || '';
+
+        // 把keyword参数加到fetch请求中
+        const ajaxUrl = '${pageContext.request.contextPath}/item/list?ajax=true' +
+            (keyword ? '&keyword=' + encodeURIComponent(keyword) : '');
+
+        fetch(ajaxUrl)
             .then(response => response.text())
             .then(html => {
                 // 找到物品列表容器，更新内容

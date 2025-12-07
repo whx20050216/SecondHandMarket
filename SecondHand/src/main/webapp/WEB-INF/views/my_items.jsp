@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>我的发布</title>
-    <!-- 使用手搓CSS，替换Bootstrap CDN -->
     <link href="${pageContext.request.contextPath}/css/my_items.css" rel="stylesheet">
 </head>
 <body>

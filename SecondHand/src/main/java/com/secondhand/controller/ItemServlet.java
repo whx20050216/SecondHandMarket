@@ -36,7 +36,7 @@ public class ItemServlet extends HttpServlet {
             req.setAttribute("items", items);
             req.setAttribute("keyword", keyword);
 
-            // 🎯 如果是 AJAX 请求，只返回列表片段
+            // 如果是 AJAX 请求，只返回列表片段
             if ("true".equals(req.getParameter("ajax"))) {
                 req.getRequestDispatcher("/WEB-INF/views/_items_fragment.jsp").forward(req, resp);
             } else {
@@ -83,7 +83,7 @@ public class ItemServlet extends HttpServlet {
         HttpSession session = req.getSession();
         User loginUser = (User) session.getAttribute("loginUser");
 
-        // 🎯 根据 action 类型分别处理
+        // 根据 action 类型分别处理
         if ("/publish".equals(action) || "/update".equals(action)) {
             // 这些请求使用 JSON body
             String jsonBody = readJsonBody(req);

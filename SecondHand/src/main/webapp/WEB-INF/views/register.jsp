@@ -28,6 +28,10 @@
             </div>
             <button type="submit" class="btn btn-success w-100">注册</button>
             <p class="text-center mt-3">已有账号？<a href="${pageContext.request.contextPath}/user/login">立即登录</a></p>
+
+            <p class="text-center mt-2">
+                <a href="${pageContext.request.contextPath}/" class="btn btn-secondary w-100">返回首页</a>
+            </p>
         </form>
     </div>
 </div>

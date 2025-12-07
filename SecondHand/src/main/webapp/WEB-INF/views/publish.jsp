@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>发布物品</title>
-    <!-- 使用手搓CSS，替换Bootstrap CDN -->
     <link href="${pageContext.request.contextPath}/css/publish.css" rel="stylesheet">
 </head>
 <body>

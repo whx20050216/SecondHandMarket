@@ -4,20 +4,20 @@
 <html>
 <head>
     <title>物品详情</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/detail.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar">
     <div class="container">
         <a class="navbar-brand" href="${pageContext.request.contextPath}/">二手交易平台</a>
-        <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="${pageContext.request.contextPath}/">首页</a>
+        <ul class="navbar-nav">
+            <li><a class="nav-link" href="${pageContext.request.contextPath}/">首页</a></li>
             <c:if test="${not empty sessionScope.loginUser}">
-                <a class="nav-link" href="${pageContext.request.contextPath}/item/publish">发布物品</a>
-                <a class="nav-link" href="${pageContext.request.contextPath}/item/my">我的发布</a>
-                <a class="nav-link" href="${pageContext.request.contextPath}/user/logout">退出</a>
+                <li><a class="nav-link" href="${pageContext.request.contextPath}/item/publish">发布物品</a></li>
+                <li><a class="nav-link" href="${pageContext.request.contextPath}/item/my">我的发布</a></li>
+                <li><a class="nav-link" href="${pageContext.request.contextPath}/user/logout">退出</a></li>
             </c:if>
-        </div>
+        </ul>
     </div>
 </nav>
 
@@ -35,7 +35,7 @@
             <h4>物品描述</h4>
             <p>${item.description}</p>
             <c:if test="${item.status == 'on_sale'}">
-                <button class="btn btn-success btn-lg"
+                <button class="btn btn-success"
                         id="purchaseBtn"
                         data-id="${item.id}">立即购买</button>
             </c:if>
@@ -43,6 +43,7 @@
         </div>
     </div>
 </div>
+
 <script>
     document.getElementById('purchaseBtn')?.addEventListener('click', async function() {
         if (!confirm('确定购买此物品吗？')) return;

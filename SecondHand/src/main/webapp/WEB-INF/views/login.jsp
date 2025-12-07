@@ -20,6 +20,10 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">登录</button>
             <p class="text-center mt-3">还没有账号？<a href="${pageContext.request.contextPath}/user/register">立即注册</a></p>
+
+            <p class="text-center mt-2">
+                <a href="${pageContext.request.contextPath}/" class="btn btn-secondary w-100">返回首页</a>
+            </p>
         </form>
     </div>
 </div>

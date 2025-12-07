@@ -29,7 +29,7 @@ public class ItemServiceImpl implements ItemService {
             return false; // 已售出物品不可编辑
         }
 
-        // 🎯 禁止将状态从已售出改回在售
+        // 禁止将状态从已售出改回在售
         if ("sold".equals(oldItem.getStatus()) && "on_sale".equals(item.getStatus())) {
             return false;
         }
